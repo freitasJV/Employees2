@@ -46,7 +46,7 @@ namespace Employees2
                              orderby x.Email
                              select x.Email;
 
-                Console.WriteLine($"Email of people whose salary is more than {minSalary} ordered by email:");
+                Console.WriteLine($"Email of people whose salary is more than {minSalary.ToString("F2", CultureInfo.InvariantCulture)} ordered by email:");
                 foreach (var item in emails)
                 {
                     Console.WriteLine(item);
@@ -64,11 +64,11 @@ namespace Employees2
             }
             catch (FormatException e)
             {
-                Console.WriteLine($"Erro de formatação: {e.Message}");
+                Console.WriteLine($"Formatting error: {e.Message}");
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Erro inesperado: {e.Message}");
+                Console.WriteLine($"An error occurred: {e.Message}");
             }
 
         }
